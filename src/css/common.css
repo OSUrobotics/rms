@@ -11,30 +11,30 @@
   padding: 0;
 }
 
-body, .preview-popup {
-  font-family: Verdana, Arial, sans-ser;
+.preview-popup {
+  /*font-family: Verdana, Arial, sans-ser;*/
   font-size: 12px;
   color: #101010;
   background: #101010 url(images/bg.jpg) repeat fixed center top;
 }
 
-h1 {
+/*h1 {
   font-variant: small-caps;
   font-size: 40px;
   color: #9ccdfc;
   text-shadow: 0 4px 2px #333;
 }
-
+*/
 h2 {
   font-variant: small-caps;
-  font-size: 26px;
-  text-shadow: 0 2px 6px #f6f6f6;
+  /*font-size: 26px;*/
+  /*text-shadow: 0 2px 6px #f6f6f6;*/
 }
 
 h3 {
   font-variant: small-caps;
   font-size: 18px;
-  text-shadow: 0 0 3px #f6f6f6;
+  /*text-shadow: 0 0 3px #f6f6f6;*/
 }
 
 p {
@@ -45,7 +45,7 @@ p {
 }
 
 article, nav ul li a, figure, .slides img {
-  border-radius: 10px;
+  /*border-radius: 10px;*/
 }
 
 header, footer, article, section, hgroup, nav, figure {
@@ -98,7 +98,7 @@ body.loading .modal {
 }
 
 /* == HEADER == */
-header {
+/*header {
   background: rgba(255, 255, 255, 0.25);
   border-top: 1px solid #333;
   width: 980px;
@@ -106,9 +106,9 @@ header {
   margin-left: auto;
   margin-right: auto;
   padding: 5px 10px 5px 10px;
-}
+}*/
 
-header figure {
+/*header figure {
   float: right;
   padding: 10px;
   background: rgba(255, 255, 255, 0.25);
@@ -138,10 +138,9 @@ nav ul li a {
   font-size: 14px;
   font-weight: bold;
   padding: 7px 10px 4px;
-  text-shadow: 0 0 5px #fff;
+  /*text-shadow: 0 0 5px #fff;*/
   text-transform: uppercase;
 }
-
 nav ul li a:hover {
   background-color: rgba(240, 240, 240, 0.66);
 }
@@ -149,18 +148,17 @@ nav ul li a:hover {
 /* == PAGE == */
 .page {
   background: rgba(10, 10, 10, 0.8);
-  width: 980px;
+  width: 768;
   position: relative;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 10px;
   border-radius: 0 0 10px 10px;
   padding: 10px;
-  box-shadow: 0 0 15px 5px #aaaaaa;
 }
 
 /* == FORM == */
-form fieldset {
+/*form fieldset {
   border: none;
 }
 
@@ -216,7 +214,7 @@ form input[type=submit]:hover, form input[type=button]:hover {
   background: #022056;
   cursor: pointer;
 }
-
+*/
 /* == SLIDESHOW == */
 .slides {
   background: rgba(240, 240, 240, 0.7);
