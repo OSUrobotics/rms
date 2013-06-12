@@ -47,17 +47,17 @@ if (!file_exists(dirname(__FILE__).'/../../inc/config.inc.php')) {
 
             // try to upload the database
             if ($error || $error = config::upload_database(
-                $_POST['host'], $_POST['dbuser'], $_POST['dbpass'], 
-                $_POST['db'], $sqlfile
+                $_POST['host'], $_POST['port'], $_POST['dbuser'],
+                $_POST['dbpass'], $_POST['db'], $sqlfile
             )
             ) {
                 $result = api::create_404_state($error);
             } else {
                 // now create the config file
                 if ($error = config::create_config_inc(
-                    $_POST['host'], $_POST['dbuser'], $_POST['dbpass'],
-                    $_POST['db'], $_POST['site-name'], $_POST['google'],
-                    $_POST['copyright']
+                    $_POST['host'], $_POST['port'], $_POST['dbuser'], 
+                    $_POST['dbpass'], $_POST['db'], $_POST['site-name'],
+                    $_POST['google'], $_POST['copyright']
                 )
                 ) {
                     $result = api::create_404_state($error);

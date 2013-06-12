@@ -46,6 +46,8 @@ include_once(dirname(__FILE__).'/../inc/head.inc.php');
       },
       error : function(data){
         // display the error
+        console.log("Error!")
+        console.log(data)
         var response = JSON.parse(data.responseText);
         removeModalPageLoading();
         createErrorDialog(response.msg);
@@ -73,6 +75,10 @@ include_once(dirname(__FILE__).'/../inc/head.inc.php');
                             <li><label for="host">Database Host</label> <input
                                 type="text" name="host" id="host"
                                 placeholder="e.g., localhost" required />
+                            </li>
+                            <li><label for="port">Database Port</label> <input
+                                type="text" name="port" id="port"
+                                placeholder="Defaults to 3306" />
                             </li>
                             <li><label for="db">Database Name</label> <input
                                 type="text" name="db" id="db"

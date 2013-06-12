@@ -40,26 +40,66 @@ class content
     static function create_header($user, $pagename, $path)
     {
         global $title, $db;
-        echo '
-        <header class="clear">
-        <figure><img src="'.$path.'img/logo.png" /></figure>
-        <hgroup><h1>'.$title.'</h1><h2>'.$pagename.'</h2></hgroup>
-        </header>
-        <div class="nav"><center><nav><ul>';
+        echo <<<HEADER
+<header>
+  <div id='osu-top-hat'>
+    <div class='container'>
+      <a href='http://oregonstate.edu' class='tag'><img src=
+      'http://robotics.oregonstate.edu/sites/all/themes/osu_standard-DF/images/osu-tag.png'
+      class='logo' alt='Oregon State University'><span class=
+      'mobile-header'>OREGON STATE UNIVERSITY</span></a>
+
+      <ul class="menu">
+        <li class="first leaf"><a href=
+        "http://calendar.oregonstate.edu">Calendar</a></li>
+
+        <li class="leaf"><a href=
+        "http://osulibrary.oregonstate.edu">Library</a></li>
+
+        <li class="leaf"><a href=
+        "http://oregonstate.edu/campusmap">Maps</a></li>
+
+        <li class="leaf"><a href=
+        "http://oregonstate.edu/main/online-services">Online
+        Services</a></li>
+
+        <li class="last leaf"><a href=
+        "http://osufoundation.org/giving/online_gift.shtml" class=
+        "campaign">Make a Gift</a></li>
+      </ul>
+      <!-- Search was here -->
+    </div>
+  </div>
+</header>
+<div id='page-wrapper' class='container'>
+    <div id='header' class='row-fluid'>
+      <h1><a href='/'>$title: $pagename</a></h1>
+    </div>
+    <div id="main-menu">
+        <div id="block-menu-primary-links" class="block block-menu">
+            <div class="content">
+              <ul class="menu">
+              
+HEADER;
     
         // list all of the content pages
         $pages = content_pages::get_content_pages();
+        $first = true;
         foreach ($pages as $cur) {
-            echo '<li><a href="'.$path.'?pageid='.$cur['pageid'].'">'.
+            $class = "leaf";
+            if ($first) {
+                $class .= " first";
+            }
+            echo '<li class="'.$class.'"><a href="'.$path.'?pageid='.$cur['pageid'].'">'.
                 $cur['menu'].'</a></li>';
         }
     
         // add the login page if the user is not logged in
         if (!$user) {
-            echo '<li><a href="'.$path.'login">Login</a></li>';
+            echo '<li class="leaf"><a href="'.$path.'login">Login</a></li>';
         }
         echo '
-        </ul></nav></center></div>';
+        </ul></div>';
     
         // the user menu
         if ($user) {
@@ -97,6 +137,7 @@ class content
         global $designedBy, $copyright;
     
         echo '
+        </div><!-- /page-wrapper -->
         <footer>
         <div class="line"></div>
         <table>

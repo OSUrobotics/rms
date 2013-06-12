@@ -101,10 +101,10 @@ class config
      */
     static function valid_config_fields($array)
     {
-        return isset($array['host']) && isset($array['db'])
+        return isset($array['host']) && isset($array['port']) && isset($array['db'])
         && isset($array['dbuser']) && isset($array['dbpass'])
         && isset($array['site-name']) && isset($array['copyright'])
-        && isset($array['google']) && (count($array) === 7);
+        && isset($array['google']) && (count($array) === 8);
     }
     
     /**
@@ -118,7 +118,7 @@ class config
      * @return string|boolean A string containing an error message or false if
      *     there were no errors
      */
-    static function upload_database($host, $user, $pass, $name, $fname)
+    static function upload_database($host, $port, $user, $pass, $name, $fname)
     {
         // grab the file
         if (!file_exists($fname) || !($sql = file_get_contents($fname))) {
@@ -156,7 +156,7 @@ class config
      * @return string|boolean A string containing an error message or false if
      *     there were no errors
      */
-    static function create_config_inc($dbhost, $dbuser, $dbpass, $dbname, 
+    static function create_config_inc($dbhost, $dbport, $dbuser, $dbpass, $dbname, 
             $title, $google, $copyright)
     {
         // create the file
@@ -173,6 +173,10 @@ class config
             $googleTrackingID .= '\''.$google.'\';';
         }
     
+        if ($dbport === '') {
+            $dbport = 3306;
+        }
+
         // put in the header
         $today = getdate();
         $toWrite = '
@@ -193,10 +197,11 @@ class config
 
 // database information
 $dbhost = \''.$dbhost.'\';
+$dbport = '.$dbport.';
 $dbuser = \''.$dbuser.'\';
 $dbpass = \''.$dbpass.'\';
 $dbname = \''.$dbname.'\';
-$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname)
+$db = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname, $dbport)
 or DIE(\'Connection has failed. Please try again later.\');
 
 // Google Analytics tracking ID -- unset if no tracking is being used.
