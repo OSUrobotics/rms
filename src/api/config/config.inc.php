@@ -125,7 +125,7 @@ class config
             return 'Could not load SQL file "'.$fname.'".';
         }
         // connect to the database
-        if (!($db = @mysqli_connect($host, $user, $pass, $name))) {
+        if (!($db = @mysqli_connect($host, $user, $pass, $name, $port))) {
             return 'Could not create a connection to the MySQL server.';
         }
     
