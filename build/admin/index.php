@@ -1225,12 +1225,18 @@ for ($i = 0; $i < $numArticles; $i++) {
                                 <table>
                                     <tbody>
                                         <tr>
-                                            <td width="33%" rowspan="7"></td>
+                                            <td width="33%" rowspan="8"></td>
                                             <td class="setting-label">Database
                                                 Host:</td>
                                             <td><?php echo $dbhost?>
                                             </td>
-                                            <td width="33%" rowspan="7"></td>
+                                            <td width="33%" rowspan="8"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="setting-label">Database
+                                                Port:</td>
+                                            <td><?php echo $dbport?>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td class="setting-label">Database

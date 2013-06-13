@@ -265,7 +265,7 @@ $designedBy = \'Site design by
      */
     static function update_site_settings($fields)
     {
-        global $dbhost, $dbuser, $dbpass, $dbname, $title, $googleTrackingID, 
+        global $dbhost, $dbport, $dbuser, $dbpass, $dbname, $title, $googleTrackingID, 
             $copyright;
                  
     
@@ -276,6 +276,12 @@ $designedBy = \'Site design by
             $newDBHost = $fields['host'];
         } else {
             $newDBHost = $dbhost;
+        }
+        if (isset($fields['port'])) {
+            $numFields++;
+            $newDBPort = $fields['port'];
+        } else {
+            $newDBPort = $dbport;
         }
         if (isset($fields['db'])) {
             $numFields++;
@@ -328,7 +334,7 @@ $designedBy = \'Site design by
         }
         // we can now run the update
         if ($error = config::create_config_inc(
-            $newDBHost, $newDBUser, $newDBPass, $newDBName, $newTitle, 
+            $newDBHost, $newDBPort, $newDBUser, $newDBPass, $newDBName, $newTitle, 
             $newGoogle, $newCopyright
         )) {
             return $error;
@@ -345,7 +351,7 @@ $designedBy = \'Site design by
      */
     static function get_site_settings_editor()
     {
-        global $dbhost, $dbuser, $dbpass, $dbname, $title, $googleTrackingID,
+        global $dbhost, $dbport, $dbuser, $dbpass, $dbname, $title, $googleTrackingID,
             $copyright;
     
         $result = '
@@ -357,6 +363,11 @@ $designedBy = \'Site design by
                 <label for="host">Database Host</label>
                 <input type="text" name="host" id="host" value="'.$dbhost.'"
                  placeholder="e.g., localhost" required />
+            </li>
+            <li>
+                <label for="host">Database Port</label>
+                <input type="text" name="port" id="host" value="'.$dbport.'"
+                 placeholder="Defaults to 3306"  />
             </li>
             <li>
                 <label for="db">Database Name</label>

@@ -46,8 +46,6 @@ include_once(dirname(__FILE__).'/../inc/head.inc.php');
       },
       error : function(data){
         // display the error
-        console.log("Error!")
-        console.log(data)
         var response = JSON.parse(data.responseText);
         removeModalPageLoading();
         createErrorDialog(response.msg);
