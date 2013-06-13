@@ -163,7 +163,7 @@ function logout() {
   // create a AJAX request
   var formData = new FormData();
   formData.append('request', 'destroy_session');
-  $.ajax('../../api/users/user_accounts/', {
+  $.ajax('/rms/api/users/user_accounts/', {
     data : formData,
     cache : false,
     contentType : false,
@@ -175,7 +175,7 @@ function logout() {
     },
     success : function(data) {
       // success
-      window.location = '../';
+      window.location = '/rms';
     }
   });
 }
