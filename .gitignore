@@ -6,3 +6,4 @@ build/inc/config.inc.php
 src/api/robot_environments/interfaces/my_first_interface
 src/inc/config.inc.php
 node_modules
+osu_files
