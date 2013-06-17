@@ -146,16 +146,7 @@ nav ul li a:hover {
 }
 
 /* == PAGE == */
-.page {
-  background: rgba(10, 10, 10, 0.8);
-  width: 768;
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  border-radius: 0 0 10px 10px;
-  padding: 10px;
-}
+.page {}
 
 /* == FORM == */
 /*form fieldset {
@@ -217,7 +208,7 @@ form input[type=submit]:hover, form input[type=button]:hover {
 */
 /* == SLIDESHOW == */
 .slides {
-  background: rgba(240, 240, 240, 0.7);
+  /*background: rgba(240, 240, 240, 0.7);*/
   padding: 5px 0 17px 0;
   margin: 0 -10px 0 -10px;
 }
@@ -279,12 +270,7 @@ form input[type=submit]:hover, form input[type=button]:hover {
 }
 
 /* == ARTICLES == */
-article {
-  background: rgba(156, 205, 252, 0.7);
-  margin: 10px 0;
-  padding: 20px;
-  border: 1px solid #022056;
-}
+article {}
 
 article figure {
   float: right;
