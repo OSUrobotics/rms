@@ -78,7 +78,7 @@ class content
     <div id="main-menu">
         <div id="block-menu-primary-links" class="block block-menu">
             <div class="content">
-              <ul class="menu">
+                <ul class="menu">
               
 HEADER;
     
@@ -127,6 +127,10 @@ HEADER;
             </td></tr></table></header>
             ';
         }
+    echo '
+        </div> <!-- /block-menu-primary-links -->
+    </div> <!-- closes div id="main-menu" -->';
+
     }
     
     /**
@@ -137,17 +141,27 @@ HEADER;
         global $designedBy, $copyright;
     
         echo '
-        </div><!-- /page-wrapper -->
-        <footer>
-        <div class="line"></div>
-        <table>
-        <tr><td align="left">'.$designedBy.'</td><td align="right">'.
-            $copyright.'</td></tr>
-        <tr><td colspan="2" align="right">'.
-            'Powered by the <a href="http://www.ros.org/wiki/rms/">'.
-            'Robot Management System</a></td></tr>
-        </table>
-        </footer>
+          </div><!-- /page-wrapper -->
+          <!-- Page Footer -->
+            <div id="footer">
+              <div class="container">
+                <div class="row">
+                  <div class="span2 contact">
+                    <h3>Contact Info</h3>
+                    <div class="specific-contact">
+                    </div>
+                    <div class="general-contact">
+                      <a href="http://oregonstate.edu/copyright">Copyright</a>
+                      &copy;2013              Oregon State University<br />
+                      <a href="http://oregonstate.edu/disclaimer">Disclaimer</a>
+                    </div>
+                     <div class="social-media"></div>
+                  </div>
+                  <div class="span10">
+                              </div>
+                </div>
+              </div>
+            </div>
         ';
     }
 }

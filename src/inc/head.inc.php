@@ -97,7 +97,7 @@ class head
         <link rel="stylesheet" type="text/css" href="'.$path.'css/common.css" />
         <link rel="stylesheet" type="text/css" href="'.$path.
             'css/jquery-ui-1.8.22.custom.css" />
-        <link href="http://fonts.googleapis.com/css?family=Gudea:400,400italic,700" "rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Gudea:400,400italic,700" rel="stylesheet" type="text/css">
         ';
     }
     
