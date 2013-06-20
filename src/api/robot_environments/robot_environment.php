@@ -191,7 +191,7 @@ class robot_environment
     function create_head()
     {
         $prot = (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
-        $path = $prot.$_SERVER['HTTP_HOST'].'/';
+        $path = $prot.$_SERVER['HTTP_HOST'].'/rms/';
 
         // grab the common information
         head::import_head($path);

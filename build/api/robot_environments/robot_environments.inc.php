@@ -364,7 +364,7 @@ class robot_environments
         global $title;
         $pagename = 'Invalid Connection';
         $prot = (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
-        $path = $prot.$_SERVER['HTTP_HOST'].'/';
+        $path = $prot.$_SERVER['HTTP_HOST'].'/rms/';
 
         echo '
                 <!DOCTYPE html>

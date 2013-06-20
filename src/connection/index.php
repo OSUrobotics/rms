@@ -47,7 +47,7 @@ session_write_close();
 $curl = curl_init();
 $prot = (isset($_SERVER['HTTPS'])) ? 'https://' : 'http://';
 $get = '?request=generate&envid='.$_GET['envid'].'&intid='.$_GET['intid'];
-$fullUrl = $prot.$_SERVER['HTTP_HOST'].'/api/robot_environments/'.$get;
+$fullUrl = $prot.$_SERVER['HTTP_HOST'].'/rms/api/robot_environments/'.$get;
 curl_setopt($curl, CURLOPT_URL, $fullUrl);
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, false);
 curl_setopt($curl, CURLOPT_HEADER, false);
