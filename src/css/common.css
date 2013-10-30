@@ -44,9 +44,9 @@ p {
   text-justify: inter-word;
 }
 
-article, nav ul li a, figure, .slides img {
-  /*border-radius: 10px;*/
-}
+/*article, nav ul li a, figure, .slides img {
+  border-radius: 10px;
+}*/
 
 header, footer, article, section, hgroup, nav, figure {
   display: block;
@@ -146,7 +146,7 @@ nav ul li a:hover {
 }
 
 /* == PAGE == */
-.page {}
+/*.page {}*/
 
 /* == FORM == */
 /*form fieldset {
@@ -270,7 +270,7 @@ form input[type=submit]:hover, form input[type=button]:hover {
 }
 
 /* == ARTICLES == */
-article {}
+/*article {}*/
 
 article figure {
   float: right;

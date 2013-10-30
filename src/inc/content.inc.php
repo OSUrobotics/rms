@@ -45,7 +45,7 @@ class content
   <div id='osu-top-hat'>
     <div class='container'>
       <a href='http://oregonstate.edu' class='tag'><img src=
-      'http://robotics.oregonstate.edu/sites/all/themes/osu_standard-DF/images/osu-tag.png'
+      'http://robotics.oregonstate.edu/sites/all/modules/osu_top_hat/images/osu-tag.png'
       class='logo' alt='Oregon State University'><span class=
       'mobile-header'>OREGON STATE UNIVERSITY</span></a>
 
